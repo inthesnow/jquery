@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <h3>스타일 변경 css</h3>
+
+    <ul class="test">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+
+    <script>
+        //js - li의 모든 백그라운드 변경
+        document.querySelectorAll("li").forEach(function(value, index, node){
+            console.log(value);
+            console.log(index);
+            console.log(node);
+
+            value.style.backgroundColor="red";
+        }) 
+
+        //jquery - li에 모든 백그라운드를 변경
+        $("li").css("backgroundColor", "blue");
+
+        //li의 값 확인
+        var result = $("li").css("backgroundColor")
+        console.log(result);
+
+        $(".box").css({backgroundColor:"red", display:"inline-block", width:"100px", height:"100px", boder:"1px solid #777"});
+    </script>
+</body>
+</html>
