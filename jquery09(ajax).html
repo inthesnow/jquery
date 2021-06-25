@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <button type="button" id="ajaxBtn">에이잭스요청</button>
+
+    <script>
+        $("#ajaxBtn").click(function() {
+            //제이쿼리 ajax함수
+            $.ajax({
+                type : "post", //요청방식
+                url : "http://localhost:8181/myweb/getAjax",
+                dataType : "json", //요청 데이터 형식
+                contentType : "application/json",//보내는 데이터에 대한 타입
+                data : JSON.stringify({"name": "홍길동", "age" : "20"}),
+                success : function(data) {//성공시 돌려받을 콜백
+                    console.log(data);
+                },
+                error : function(status, error) {//실패시 결과를 돌려받을 콜백
+                    console.log(status, error);
+                }
+            })
+        })
+
+    </script>
+
+</body>
+</html>
